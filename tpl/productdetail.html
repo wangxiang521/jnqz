@@ -1,0 +1,371 @@
+<!--<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>聚宝盆详情页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maxmim-scale=1.1,user-scalable=no">
+    &lt;!&ndash; 苹果用户的属性 &ndash;&gt;
+    <meta name="apple-mobile-web-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script>
+        !function(win) {
+            function resize() {
+                var domWidth = domEle.getBoundingClientRect().width;
+                if(domWidth / v > 540){
+                    domWidth = 540 * v;
+                }
+                win.rem = domWidth / 16;
+                domEle.style.fontSize = win.rem + "px";
+            }
+            var v, initial_scale, timeCode, dom = win.document, domEle = dom.documentElement, viewport = dom.querySelector('meta[name="viewport"]'), flexible = dom.querySelector('meta[name="flexible"]');
+            if (viewport) {
+                //viewport：<meta name="viewport"content="initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5,user-scalable=no,minimal-ui"/>
+                var o = viewport.getAttribute("content").match(/initial\-scale=(["']?)([\d\.]+)\1?/);
+                if(o){
+                    initial_scale = parseFloat(o[2]);
+                    v = parseInt(1 / initial_scale);
+                }
+            } else {
+                if (flexible) {
+                    var o = flexible.getAttribute("content").match(/initial\-dpr=(["']?)([\d\.]+)\1?/);
+                    if(o){
+                        v = parseFloat(o[2]);
+                        initial_scale = parseFloat((1 / v).toFixed(2))
+                    }
+                }
+            }
+            if (!v && !initial_scale) {
+                var n = (win.navigator.appVersion.match(/android/gi), win.navigator.appVersion.match(/iphone/gi));
+                v = win.devicePixelRatio;
+                v = n ? v >= 3 ? 3 : v >= 2 ? 2 : 1 : 1, initial_scale = 1 / v
+            }
+            //没有viewport标签的情况下
+            if (domEle.setAttribute("data-dpr", v), !viewport) {
+                if (viewport = dom.createElement("meta"), viewport.setAttribute("name", "viewport"), viewport.setAttribute("content", "initial-scale=" + initial_scale + ", maximum-scale=" + initial_scale + ", minimum-scale=" + initial_scale + ", user-scalable=no"), domEle.firstElementChild) {
+                    domEle.firstElementChild.appendChild(viewport)
+                } else {
+                    var m = dom.createElement("div");
+                    m.appendChild(viewport), dom.write(m.innerHTML)
+                }
+            }
+            win.dpr = v;
+            win.addEventListener("resize", function() {
+                clearTimeout(timeCode), timeCode = setTimeout(resize, 300)
+            }, false);
+            win.addEventListener("pageshow", function(b) {
+                b.persisted && (clearTimeout(timeCode), timeCode = setTimeout(resize, 300))
+            }, false);
+            /* 个人觉得没必要完成后就把body的字体设置为12
+             "complete" === dom.readyState ? dom.body.style.fontSize = 12 * v + "px" : dom.addEventListener("DOMContentLoaded", function() {
+             //dom.body.style.fontSize = 12 * v + "px"
+             }, false);
+             */
+            resize();
+        }(window);
+    </script>
+    <link rel="stylesheet" href="../css/common.css"/>
+    <link rel="stylesheet" href="../css/index.css"/>
+    <link rel="stylesheet" href="../css/cornucopia.css"/>
+    <link rel="stylesheet" href="../css/product-details.css"/>
+</head>
+<body>-->
+    <div class="container_222">
+        <div class="header clear">
+            <a  class='back1 red ' href="#"><</a>
+            <div class="header_title">聚宝盆QZ-111</div>
+            <div><img src="" alt=""/></div>
+        </div>
+        <div class="nav">
+            <ul class="nav-header">
+                <li>
+                    <a  class="activ" href="#product-detail">产品详情</a>
+                </li>
+                <li>
+                    <a href="#safe-promite">安全保证</a>
+                </li>
+                <li>
+                    <a href="#lending-record">出借记录</a>
+                </li>
+                <li>
+                    <a href="#legal-information">法律信息</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="product-detail" id="product-detail">
+                <div class="detail">
+                    <div class="detail-title">
+                        项目总额
+                    </div>
+                    <div class="detail-content">
+                        50000.00元
+                    </div>
+                </div>
+                <div class="detail">
+                    <div class="detail-title">
+                        购买时间
+                    </div>
+                    <div class="detail-content">
+                        2016/10/26-2016/10/31
+                    </div>
+                </div>
+                <div class="detail-ts">
+                    <div class="detail-title">
+                        起息日期
+                    </div>
+                    <div class="detail-content">
+                        <div>满标后（即资金筹满日）后的第
+                            一个自然日开始计息</div>
+                    </div>
+                </div>
+                <div class="detail">
+                    <div class="detail-title">
+                        还款日
+                    </div>
+                    <div class="detail-content">
+                        到期后1个工作日/T+1
+                    </div>
+                </div>
+                <div class="detail-ts1">
+                    <div class="detail-title ">
+                        购买规则
+                    </div>
+                    <div class="detail-content ">
+                        1000元起购，1元递增，投资限
+                        额5000元，本平台不向投资人
+                        收取任何费用
+                    </div>
+                </div>
+                <div class="fgt"></div>
+                <div class="description">
+                    <div class="description-title">
+                        产品说明
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+                <div class="fgt"></div>
+            </div>
+            <div class="safe-promite" id="safe-promite">
+                <div >
+                    <img src="img/safe_promite_360.png" alt=""/>
+                </div >
+                <div >
+                    <img src="img/safe_promite_three.png" alt=""/>
+                </div>
+                <div class="safe-promite-fgt"></div>
+                <div >
+                    <img src="img/safe_promite_country.png" alt=""/>
+                </div >
+                <div class="safe-promite-fgt"></div>
+                <div class="safe-promite-txt">
+                    <div>
+                        <h1>风控体系</h1>
+                        <div>
+                            多重审查，全程监控。只为向您提供优质、安全的项目。
+                        </div>
+                    </div>
+                    <div class="safe-main">
+                        <div class="safe-head">
+                            <span>STEP1&nbsp;&nbsp;&nbsp;&nbsp;</span>甄选优质，合作机构
+                        </div>
+                        <div class="safe-content">
+                            <div>
+                                &nbsp;&nbsp;&nbsp;&nbsp;1. 引入专业的企业信用评级机构对前期有合作意向的类金融机构进行必要的信用评级，保证合作机构具备必要的风险代偿能力。
+                                <br/>&nbsp;&nbsp;&nbsp;&nbsp;2. 与主要的合作机构签定排他的战略合作协议，从而避免项目的重复担保。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="safe-main">
+                        <div class="safe-head">
+                            <span>STEP2&nbsp;&nbsp;&nbsp;&nbsp;</span>合作机构，筛选优质项目
+                        </div>
+                        <div class="safe-content">
+                            <div>
+                                &nbsp;&nbsp;&nbsp;&nbsp;1. 多层信用审查：通过 5 个以上维度综合评定借款方个人或企业的真实资信情况。
+                                <br/>&nbsp;&nbsp;&nbsp;&nbsp;2. 还款能力审查：收集 8 项以上凭证比对及交叉校验，确保财务情况真实性。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="safe-main">
+                        <div class="safe-head">
+                            <span>STEP3&nbsp;&nbsp;&nbsp;&nbsp;</span>项目上线核查
+                        </div>
+                        <div class="safe-content">
+                            <div>
+                                平台对项目上线前进行最终的资料复核及项目信息确认，确保信息准确无误。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="safe-main">
+                        <div class="safe-head">
+                            <span>STEP1&nbsp;&nbsp;&nbsp;&nbsp;</span>合作机构，本息保障
+                        </div>
+                        <div class="safe-content">
+                            <div>
+                                项目回款逾期的7个工作日内，合作机构将进行本息全额垫付。平台至今未出现过无法代偿的项目。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="safe-main">
+                        <div class="safe-head">
+                            <span>STEP5&nbsp;&nbsp;&nbsp;&nbsp;</span>银行级专业团队
+                        </div>
+                        <div class="safe-content">
+                            <div>
+                                我们的团队成员在金融和互联网领域均有着丰富经验，主要来自大型国有商业银行、股份制银行等金融机构。
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="safe-promite-fgt"></div>
+                <div class="safe-img">
+                    <div>
+                        <h1 class="safe-img-head">资金托管</h1>
+                        <div class="safe-img-txt">
+                            富有”获得中国人民银行颁发的《支付业务许
+                            可证》的机构。由其作为第三方机构进行资
+                            金托管，独立负责资金调度。
+                        </div>
+                    </div>
+                    <div>
+                        <img src="img/safe_promite_xh.png" alt=""/>
+                    </div>
+                </div>
+                <div class="safe-img img2">
+                    <div>
+                        <h1 class="safe-img-head head2">最优选择</h1>
+                        <div class="safe-img-txt">
+                            我们专注于用低风险、高收益赢得用户的口碑。
+                            为全民理财塑造一个金字招牌。
+                        </div>
+                    </div>
+                    <div>
+                        <img src="img/safe_promite_tb.png" alt=""/>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="lending-record" id="lending-record">
+                <div>
+                    <div>投资人</div>
+                    <div>金额（元）</div>
+                    <div>时间</div>
+                </div>
+                <div>
+                    <div>18******158</div>
+                    <div>50000</div>
+                    <div>2016-11-04</div>
+                </div>
+                <div>
+                    <div>18******158</div>
+                    <div>50000</div>
+                    <div>2016-11-04</div>
+                </div>
+                <div>
+                    <div>18******158</div>
+                    <div>50000</div>
+                    <div>2016-11-04</div>
+                </div>
+                <div>
+                    <div>18******158</div>
+                    <div>50000</div>
+                    <div>2016-11-04</div>
+                </div>
+            </div>
+            <div class="legal-information" id="legal-information">
+                <div class="legal-information-head">
+                    <b></b>资料披露<b></b>
+                </div>
+                <div class="legal-information-txt">
+                    <div class="left">1.借款人营业执照</div>
+                    <div class="right">&gt;&gt;</div>
+                </div>
+                <div class="legal-information-txt">
+                    <div class="left">2.借款人法人代表身份证</div>
+                    <div class="right">&gt;&gt;</div>
+
+                </div>
+                <div class="legal-information-txt">
+                    <div class="left">3.采购合同</div>
+                    <div class="right">&gt;&gt;</div>
+                </div>
+                <div class="legal-information-txt">
+                    <div class="left">4.应收账款保理合同</div>
+                    <div class="right">&gt;&gt;</div>
+                </div>
+                <div class="legal-information-head">
+                    <b></b>合同披露<b></b>
+                </div>
+                <div class="legal-information-txt">
+                    <div class="left">1.融资顾问合同</div>
+                    <div class="right">&gt;&gt;</div>
+                </div>
+                <div class="legal-information-txt">
+                    <div class="left">2.借款合同</div>
+                    <div class="right">&gt;&gt;</div>
+                </div>
+                <div class="legal-information-txt">
+                    <div class="left">3.担保合同</div>
+                    <div class="right">&gt;&gt;</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer footer-bottom">
+            <div class="count">
+
+            </div>
+            <input type="text" placeholder="剩余投资金额" />
+            <div class="btn_lktz">
+                立&nbsp;即&nbsp;投&nbsp;资
+            </div>
+        </div>
+        <div class="modall">
+            <div class="modal-content">
+
+                <b>&times;</b>
+                <div>
+                    <h1>计算收益</h1>
+                    <input type="text" placeholder="请输入金额"/>
+                    <div>
+                        <div class="red">0.00</div>
+                        <span>预期收入（元）</span>
+                    </div>
+                    <div class="modal-content-footer clear">
+                        <div>
+                            <div>
+                                8.00%
+                                <div> 预计年化</div>
+                            </div>
+
+                        </div>
+                        <div>
+                            <div>
+                                30天
+                                <div>投资期限</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--<script src="../js/jquery-1.11.3.js"></script>-->
+    <script>
+        $('.nav-header>li a').on('click',function(e){
+            e.preventDefault();
+            $(this).addClass('activ').parent().siblings().children('a').removeClass('activ');
+            $($(this).attr('href')).css('display','block').siblings().css('display','none');
+
+        })
+    </script>
+<!--
+</body>
+</html>-->

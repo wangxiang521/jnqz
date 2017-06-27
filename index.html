@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en" ng-app="jnqz">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maxmim-scale=1.1,user-scalable=no">
+  <!-- 苹果用户的属性 -->
+  <meta name="apple-mobile-web-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title>mobile app[</title>
+	 <script>
+		 !function(win) {
+			 function resize() {
+				 var domWidth = domEle.getBoundingClientRect().width;
+				 if(domWidth / v > 540){
+					 domWidth = 540 * v;
+				 }
+				 win.rem = domWidth / 16;
+				 domEle.style.fontSize = win.rem + "px";
+			 }
+			 var v, initial_scale, timeCode, dom = win.document, domEle = dom.documentElement, viewport = dom.querySelector('meta[name="viewport"]'), flexible = dom.querySelector('meta[name="flexible"]');
+			 if (viewport) {
+				 //viewport：<meta name="viewport"content="initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5,user-scalable=no,minimal-ui"/>
+				 var o = viewport.getAttribute("content").match(/initial\-scale=(["']?)([\d\.]+)\1?/);
+				 if(o){
+					 initial_scale = parseFloat(o[2]);
+					 v = parseInt(1 / initial_scale);
+				 }
+			 } else {
+				 if (flexible) {
+					 var o = flexible.getAttribute("content").match(/initial\-dpr=(["']?)([\d\.]+)\1?/);
+					 if(o){
+						 v = parseFloat(o[2]);
+						 initial_scale = parseFloat((1 / v).toFixed(2))
+					 }
+				 }
+			 }
+			 if (!v && !initial_scale) {
+				 var n = (win.navigator.appVersion.match(/android/gi), win.navigator.appVersion.match(/iphone/gi));
+				 v = win.devicePixelRatio;
+				 v = n ? v >= 3 ? 3 : v >= 2 ? 2 : 1 : 1, initial_scale = 1 / v
+			 }
+			 //没有viewport标签的情况下
+			 if (domEle.setAttribute("data-dpr", v), !viewport) {
+				 if (viewport = dom.createElement("meta"), viewport.setAttribute("name", "viewport"), viewport.setAttribute("content", "initial-scale=" + initial_scale + ", maximum-scale=" + initial_scale + ", minimum-scale=" + initial_scale + ", user-scalable=no"), domEle.firstElementChild) {
+					 domEle.firstElementChild.appendChild(viewport)
+				 } else {
+					 var m = dom.createElement("div");
+					 m.appendChild(viewport), dom.write(m.innerHTML)
+				 }
+			 }
+			 win.dpr = v;
+			 win.addEventListener("resize", function() {
+				 clearTimeout(timeCode), timeCode = setTimeout(resize, 300)
+			 }, false);
+			 win.addEventListener("pageshow", function(b) {
+				 b.persisted && (clearTimeout(timeCode), timeCode = setTimeout(resize, 300))
+			 }, false);
+			 /* 个人觉得没必要完成后就把body的字体设置为12
+			  "complete" === dom.readyState ? dom.body.style.fontSize = 12 * v + "px" : dom.addEventListener("DOMContentLoaded", function() {
+			  //dom.body.style.fontSize = 12 * v + "px"
+			  }, false);
+			  */
+			 resize();
+		 }(window);
+	 </script>
+	 <link rel="stylesheet" href="css/swiper-3.4.0.min.css"/>
+	 <link rel="stylesheet" href="css/common.css"/>
+  		<link rel="stylesheet" href="css/index.css">
+	 <link rel="stylesheet" href="css/cornucopia.css"/>
+	 <link rel="stylesheet" href="css/product-details.css"/>
+
+ </head>
+ <body ng-controller="parentCtrl">
+ <div class="container_333 fx-modal">
+		 <div class="modall" style="display: block">
+		 <div class="tss">
+			 <img src="img/fx-2.png" alt=""/>
+			 <div class="right">
+				 点击右上角，发送至朋友圈，<br/>
+				 就有好礼相送</div>
+		 </div>
+
+	 </div>
+ </div>
+ <div class="modall" id="login">
+	 <div class="modal-content modal-content-index">
+		 <div class="modal-index">
+			 <input type="text" placeholder="请输入用户名/手机/邮箱"/>
+			 <input type="password" placeholder="密码"/>
+			 <div class="btn_dl" ng-click="jump('/mine')">
+				 登录
+			 </div>
+			 <div class="clear help">
+				 <div class="left" ng-click="jump('/zc')">免费注册</div>
+				 <div class="right" ng-click="jump('/yzsj')">忘记密码</div>
+			 </div>
+			 <div>
+				 <img src="img/qq.png" alt=""/>
+				 <img src="img/wx.png" alt=""/>
+			 </div>
+		 </div>
+	 </div>
+ </div>
+	<div class="container" ng-view>
+
+		<!--<div class="container_index">
+			<section class="topBanner clear">
+				<ul >
+					<li><a href=""><img src="img/lb_1.jpg" alt=""></a></li>
+					<li><a href=""><img src="img/lb_1.jpg" alt=""></a></li>
+					<li><a href=""><img src="img/lb_1.jpg" alt=""></a></li>
+					<li><a href=""><img src="img/lb_1.jpg" alt=""></a></li>
+				</ul>
+			</section>
+			<nav class="clear"	>
+				<ul class="clear">
+					<li>
+						<a  class="clear" href="#">
+							<img src="img/nav_1.png" alt="" />
+							<div>
+								<span>我的红包</span>
+							</div>
+						</a>
+
+					</li>
+					<li>
+						<a class="clear" href="">
+							<img src="img/nav_4.png" alt=""/>
+							<div>
+								<span>新手必读</span>
+							</div>
+						</a>
+
+					</li>
+					<li>
+						<a  class="clear" href="">
+							<img src="img/nav_2.png" alt="" />
+							<div>
+								<span>关于我们</span>
+							</div>
+						</a>
+
+					</li>
+					<li>
+						<a class="clear" href="">
+							<img src="img/nav_3.png" alt="" />
+							<div>
+								<span>钱庄动态</span>
+							</div>
+						</a>
+
+					</li>
+				</ul>
+			</nav>
+			<div class="fgt"></div>
+			<div class="main">
+				<div class="title">
+					<span></span>
+					<div class="title_txt">新手标</div>
+					<span></span>
+				</div>
+				<div class="main_content">
+					<div class="safe btn">
+						<img src="img/safe.png" alt=""/>
+						<span>安全保障</span>
+					</div>
+					<div class="gzrg btn">
+						<img src="img/gzrg.png" alt=""/>
+						<span>国资控股</span>
+					</div>
+					<div class="fdkz btn">
+						<img src="img/fdkz.png" alt=""/>
+						<span>风度控制</span>
+					</div>
+					<div class="zjtg btn">
+						<img src="img/zjtg.png" alt=""/>
+						<span>资金托管</span>
+					</div>
+					<div id="main_circle">
+						<div>
+							<img src="img/circle.png" alt=""/>
+						</div>
+					</div>
+				</div>
+				<div class="main_bottom">
+					<div class="clear">
+						<div class="left">
+							<span>投资期限</span>
+							<br/>
+							<b>1</b><span>个月</span>
+						</div>
+						<div class="right">
+							<span>剩余可投</span>
+							<br/>
+							<b>80000</b><span>元</span>
+						</div>
+					</div>
+					<a id="#container_buttons" class="a_demo_two">
+						立即投资
+					</a>
+				</div>
+			</div>
+		</div>-->
+		<!--<div class="activity">
+			<div >
+				<a href="">
+					<img src="img/active_1.png" alt=""/>
+				</a>
+			</div>
+			<div>
+				<a href="">
+					<img src="img/active_2.png" alt=""/>
+				</a>
+				<div class="modal">
+					<div class="modal_txt">
+						<h1>活动结束</h1>
+					</div>
+				</div>
+			</div>
+			<div>
+				<a href="">
+					<img src="img/active_3.png" alt=""/>
+				</a>
+			</div>
+			<div>
+				<a href="">
+					<img src="img/active_4.png" alt=""/>
+				</a>
+			</div>
+		</div>-->
+		<!--<div>
+			<div class="active_nav">
+				<div class="active_xz">全部</div><div>聚宝盆</div><div>摇钱树</div>
+			</div>
+			<div>
+				<div class="fgt"></div>
+				<div class="product_lc">
+					<div class="product_left">
+						<div class="lc_name">
+							<span>聚宝盆QZ-111期</span>
+							<b class="lc_b_red">加息1.00%</b>
+						</div>
+						<div class="box box1">
+							<span class="lc_sy red">8.0</span>
+							<span class="lc_bfb ddd">%</span>
+							<div class="yqnh">预期年化</div>
+						</div>
+						<div class="box">
+							<span class="lc_day">30</span>
+							<span class="lc_t">天</span>
+							<div class="xmzq">项目周期</div>
+						</div>
+					</div>
+					<div class="product_right">
+						<div id="circle" >
+							<canvas id="one"></canvas>
+						</div>
+						<div class="xsb">
+
+						</div>
+					</div>
+				</div>
+				<div class="product_lc">
+					<div class="product_left">
+						<div class="lc_name">
+							<span>聚宝盆QZ-111期</span>
+							<b class="lc_b_gray">加息1.00%</b>
+						</div>
+						<div class="box box1">
+							<span class="lc_sy ddd">8.0</span>
+							<span class="lc_bfb ddd">%</span>
+							<div class="yqnh">预期年化</div>
+						</div>
+						<div class="box">
+							<span class="lc_day">30</span>
+							<span class="lc_t">天</span>
+							<div class="xmzq">项目周期</div>
+						</div>
+					</div>
+					<div class="product_right">
+						<div class="circle" >
+							<div>
+								撮合成功
+							</div>
+
+						</div>
+						<div class="xsb">
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>-->
+	</div>
+	<!--<footer class="btnList clear">
+		<a  class="hd" href="#/activity">活动</a>
+		<a class="cp" href="#/product1">产品</a>
+		<div class="sy" ng-click="jump('/start')">
+			<img src="img/sy.png" alt=""/>
+			<br/>
+			<div>首页</div>
+		</div>
+		<a class="fx" href="#">分享</a>
+		<a class="wd" href="#">我的</a>
+	</footer>-->
+ </body>
+
+ <script src="js/jquery-1.11.3.js"></script>
+ <script src="js/angular.js"></script>
+ <script src="js/angular-route.js"></script>
+ <script src="js/index.js"></script>
+ <script src="js/swiper-3.4.0.jquery.min.js"></script>
+</html>
+

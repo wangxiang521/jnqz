@@ -1,0 +1,133 @@
+
+html,body,p,h1,h2,h3,h4,h5,h6,form,input,textarea,select,button,fieldset,legend,img,ul,ol,li,dl,dt,dd,th,td,pre,blockquote{margin:0;padding:0}
+html{height:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-webkit-font-smoothing:antialiased}
+body{background: #f0f0f0;color:#000;}
+body,button,input,select,textarea,h2,h3,h4,h5,h6{font:14px 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', '宋体', \5b8b\4f53, Tahoma, Arial;-webkit-font-smoothing: antialiased;}
+img,fieldset{border:0;vertical-align:middle}
+input{padding:0;margin:0;outline:none;}
+input{list-style: none;border:none}
+
+a{text-decoration:none;color:#4c4c4c;}
+a:hover{text-decoration:none;border:none}
+ul,li,ol{list-style:none}
+input[type='password']{
+    appearance:button;
+    -moz-appearance:button; /* Firefox */
+    -webkit-appearance:button; /* Safari 和 Chrome */
+}
+img{max-width:100%;}
+*{
+    box-sizing: border-box;
+}
+.left{
+    float:left;
+}
+.right{
+    float:right;
+}
+html,body{
+    font-size: 20px;
+    font-family: Helvetice,"microsoft yahei";
+
+}
+body{
+    position: relative;
+    overflow-x: hidden;
+    -webkit-overflow-scolling: touch;
+    background: #fefefe;
+    font-family: Microsoft Yahei;
+}
+input[type='text']{
+    background-position-y:-1px;
+}
+
+ul{
+    list-style: none;
+}
+a{
+    color: #000;
+    text-decoration: none;
+}
+img{
+    vertical-align: middle;
+}
+
+.clear:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+@media screen and (max-width:320px){
+    body{
+        -webkit-text-size-adjust: none;
+    }
+}
+@media screen and (max-width:480px){
+    body{
+        -webkit-text-size-adjust: none;
+    }
+}
+@media screen and (-webkit-min-device-pixel-ratio:2){
+    body{
+        -webkit-text-size-adjust: none;
+    }
+}
+@media screen and (min-width: 768px)  and (max-width: 1024px){
+    body{
+        -webkit-text-size-adjust: none;
+    }
+}
+/*@media only screen and (min-width: 360px){
+    html {
+        font-size: 22.5px !important;
+    }
+}
+@media only screen and (min-width: 370px){
+    html {
+        font-size: 23.125px !important;
+    }
+}
+
+@media only screen and (min-width: 401px){
+    html {
+        font-size: 25px !important;
+    }
+}
+@media only screen and (min-width: 428px){
+    html {
+        font-size: 26.75px !important;
+    }
+}
+@media only screen and (min-width: 481px){
+    html {
+        font-size: 30px !important;
+    }
+}
+@media only screen and (min-width: 569px){
+    html {
+        font-size: 35px !important;
+    }
+}
+@media only screen and (min-width: 641px){
+    html {
+        font-size: 40px !important;
+    }
+}
+@media only screen and (min-width: 760px){
+    html {
+        font-size: 47.5px !important;
+    }
+}*/
+/*文字处理样式*/
+.text-nowrap{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+@media only screen and (min-width: 760px){
+    footer.btnList>a.sy div{
+       position: absolute;
+        bottom:15px;
+        left:26px;
+    }
+}
